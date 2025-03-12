@@ -21,6 +21,6 @@ print(nyelv)
 print(evszam)
 
 
-with open("Nyelv_ev.txt", "a+", encoding="utf-8") as celfajl:
-    print(nyelv)
-    print(evszam)
+with open("Nyelv_ev.txt", "w", encoding="utf-8") as celfajl:
+    print(nyelv, file=celfajl)
+    print(evszam, file=celfajl)
