@@ -8,19 +8,24 @@ Olvasd be a fájl tartalmát, és másold át azt egy fájlba úgy, hogy abba m�
 nyelv = []
 evszam = []
 
-with open("Sourcew", "r", encoding="utf-8") as forrasfajl:
-    for sor in forrasfajl:
-        adatok = sor.strip().split(";")
-        ev = adatok[0]
-        programnyelv = adatok[1]
-        nyelv.append(programnyelv)
-        evszam.append(ev)
+def kigyujtes():
+    with open("Sourcew", "r", encoding="utf-8") as forrasfajl:
+        for sor in forrasfajl:
+            adatok = sor.strip().split(";")
+            ev = adatok[0]
+            programnyelv = adatok[1]
+            nyelv.append(programnyelv)
+            evszam.append(ev)
 
 
-print(nyelv)
-print(evszam)
+    print(f"Nyelvek:\n {nyelv}\n")
+    print(f"Évek:\n {evszam}")
+
+def fajliras():
+    with open("Nyelv_ev.txt", "w", encoding="utf-8") as celfajl:
+        print(f"Nyelvek:\n {nyelv}\n", file=celfajl)
+        print(f"\nÉvek:\n {evszam}", file=celfajl)
 
 
-with open("Nyelv_ev.txt", "w", encoding="utf-8") as celfajl:
-    print(nyelv, file=celfajl)
-    print(evszam, file=celfajl)
+kigyujtes()
+fajliras()
